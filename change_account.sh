@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-filelist = "Dockerfile docker-compose.yml files/init.sh"
+filelist="Dockerfile docker-compose.yml files/init.sh"
 echo -e "username: \c"
 read username
 echo -e "password: \c"

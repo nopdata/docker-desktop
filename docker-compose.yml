@@ -1,0 +1,23 @@
+version: '3.0'
+
+services:
+  desktop:
+    hostname: server
+    build: .
+    ports:
+      - "80:80"
+      - "22:22"
+    volumes:
+      - /dev/shm:/dev/shm
+    privileged: true
+    entrypoint: /srv/init.sh
+    tty: true
+    cap_add:
+      - NET_ADMIN
+    network_mode: bridge
+    environment:
+      - RESOLUTION=1530x860
+      - HOME=/home/<username>
+      - USER=<username>
+      - PASSWORD=<password>
+      - VNC_PASSWORD=<password>
